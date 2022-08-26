@@ -23,7 +23,7 @@ spec:
         app: springboot
     spec:
       containers:
-      - image: sandeshk1993/harness_demo
+      - image: sandeshk1993/harness_demo:$(IMAGE_TAG)
         name: springboot
         ports:
         - containerPort: 8080  
