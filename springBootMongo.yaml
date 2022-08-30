@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
       - name: springappcontainer
-        image: sandeshk1993/harness_demo
+        image: sandeshk1993/harness_demo:latest
         ports:
         - containerPort: 8080
         env:
