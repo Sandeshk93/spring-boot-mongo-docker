@@ -1,13 +1,18 @@
-FROM openjdk:8-alpine
+#FROM openjdk:8-alpine
 
 # Required for starting application up.
-RUN apk update && apk add /bin/sh
+#RUN apk update && apk add /bin/sh
+#RUN mkdir -p /opt/app
+#ENV PROJECT_HOME /opt/app
+#COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
+#WORKDIR $PROJECT_HOME
+#CMD ["java" ,"-jar","./spring-boot-mongo.jar"]
 
-RUN mkdir -p /opt/app
-ENV PROJECT_HOME /opt/app
+FROM tomcat
 
-COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
+COPY target/spring-boot-mongo-1.0.jar /usr/local/tomcat/webapps/
+CMD [“catalina.sh”, “run”]
 
-WORKDIR $PROJECT_HOME
 
-CMD ["java" ,"-jar","./spring-boot-mongo.jar"]
+
+
