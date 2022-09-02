@@ -10,8 +10,8 @@
 
 FROM tomcat
 
-COPY target/spring-boot-mongo-1.0.jar /usr/local/tomcat/webapps/
-CMD [“catalina.sh”, “run”]
+COPY target/spring-boot-mongo-1.0.jar /usr/local/tomcat/webapps/spring-boot-mongo-1.0.jar
+#CMD [“catalina.sh”, “run”]
 
 
 
